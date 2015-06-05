@@ -18,20 +18,6 @@ ship::ship()
     damagedShields = new int;
     flagIsDead = new bool;
     flagIsDead = false;
-    /*int maxHealth = 0;
-    int shields = 0;
-    int maxShields = 0;
-    int weaponPower = 0;
-    int accuracy = 0;
-    int pierce = 0;
-    int enginesLevel = 0;
-    int armorLevel = 0;
-    int damagedEngines = 0;
-    int damagedWeapons = 0;
-    int damagedOptics = 0;
-    int breachedHull = 0;
-    int damagedShields = 0;
-    bool flagIsDead = 0;*/
 }
 ship::~ship()
 {
@@ -50,21 +36,6 @@ ship::~ship()
     delete breachedHull;
     delete damagedShields;
     delete flagIsDead;
-    /*int health = 0;
-    int maxHealth = 0;
-    int shields = 0;
-    int maxShields = 0;
-    int weaponPower = 0;
-    int accuracy = 0;
-    int pierce = 0;
-    int enginesLevel = 0;
-    int armorLevel = 0;
-    int damagedEngines = 0;
-    int damagedWeapons = 0;
-    int damagedOptics = 0;
-    int breachedHull = 0;
-    int damagedShields = 0;
-    bool flagIsDead = 1;*/
 }
 bool ship::checkHit(ship* attacker, ship* defender)
 {
