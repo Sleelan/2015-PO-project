@@ -16,12 +16,24 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     void forceUpdatePlayer ();
+    QPixmap playerBattleship;
+    QPixmap playerBattleshipDead;
+    QPixmap playerCruiser;
+    QPixmap playerCruiserDead;
+    QPixmap playerDestroyer;
+    QPixmap playerDestroyerDead;
+    QPixmap enemyFighter;
+    QPixmap enemyFighterDead;
+    QPixmap enemyDestroyer;
+    QPixmap enemyDestroyerDead;
+    QPixmap enemyCruiser;
+    QPixmap enemyCruiserDead;
+    QPixmap enemyBomber;
+    QPixmap enemyBomberDead;
+    QPixmap enemyBoss;
+    QPixmap enemyBossDead;
 
 private slots:
-
-    void on_actionSave_triggered();
-
-    void on_actionLoad_triggered();
 
     void on_attackButton_clicked();
 

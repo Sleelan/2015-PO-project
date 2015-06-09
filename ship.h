@@ -44,7 +44,11 @@ public:
     void hitShip(ship, ship);
     ship();
     virtual ~ship();
-    ship &operator= (const ship&);
+    ship &operator = (const ship&);
+    ship &operator + (const ship&)const;
+    ship &operator - (const ship&)const;
+    ship &operator * (const ship&)const;
+    ship &operator / (const ship&)const;
 };
 
 #endif // SHIP_H

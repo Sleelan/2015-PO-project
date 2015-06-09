@@ -26,6 +26,7 @@ void enemy::rollEnemy(int initialSector)
             *this->pierce = 0 + (int)(sector/6);
             *this->enginesLevel = 6 + sector;
             *this->armorLevel = 0 + (int)(sector/4);
+            *enemyClass = 1;
         }
         if (diceroll >= 40 && diceroll < 70) //Destroyer
         {
@@ -38,6 +39,7 @@ void enemy::rollEnemy(int initialSector)
             *this->pierce = 0 + (int)(sector/5);
             *this->enginesLevel = 4 + (int)(sector/2);
             *this->armorLevel = 0 + (int)(sector/2);
+            *enemyClass = 2;
         }
         if (diceroll >= 70 && diceroll < 85) //Bomber
         {
@@ -50,6 +52,7 @@ void enemy::rollEnemy(int initialSector)
             *this->pierce = 0 + (int)(sector/4);
             *this->enginesLevel = 2 + (int)(sector/6);
             *this->armorLevel = 2 + (int)(sector/2);
+            *enemyClass = 3;
         }
         if (diceroll >=85) //Cruiser
         {
@@ -62,6 +65,7 @@ void enemy::rollEnemy(int initialSector)
             *this->pierce = 1 + (int)(sector/2);
             *this->enginesLevel = 4+ (int)(sector/4);
             *this->armorLevel = 0 + (int)(sector/6);
+            *enemyClass = 4;
         }
         *flagIsDead = false;
 }
@@ -81,4 +85,5 @@ void enemy::rollBoss (int initialSector)
     *this->enginesLevel = 6 + sector;
     *this->armorLevel = 2 + sector;
     *flagIsDead = false;
+    *enemyClass = 5;
 }

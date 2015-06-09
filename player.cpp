@@ -5,6 +5,7 @@ player::player()
     isPlayer = new bool;
     *isPlayer = true;
     shipClass = new int;
+    *shipClass = 3;
 }
 player::~player()
 {

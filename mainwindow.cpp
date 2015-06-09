@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
 }
 
 MainWindow::~MainWindow()
@@ -23,19 +24,16 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_actionSave_triggered()
-{
-
-}
-
-void MainWindow::on_actionLoad_triggered()
-{
-
-}
-
-
 void MainWindow::on_attackButton_clicked()
 {
+    QPixmap playerBattleshipDead("D:/Kody/QT/Projekt/Images/PBsD.png");
+    QPixmap playerCruiserDead("D:/Kody/QT/Projekt/Images/PCrD.png");
+    QPixmap playerDestroyerDead("D:/Kody/QT/Projekt/Images/PDrD.png");
+    QPixmap enemyFighterDead ("D:/Kody/QT/Projekt/Images/EFtD.png");
+    QPixmap enemyDestroyerDead ("D:/Kody/QT/Projekt/Images/EDrD.png");
+    QPixmap enemyCruiserDead ("D:/Kody/QT/Projekt/Images/ECrD.png");
+    QPixmap enemyBomberDead ("D:/Kody/QT/Projekt/Images/EBmD.png");
+    QPixmap enemyBossDead ("D:/Kody/QT/Projekt/Images/EBsD.png");
     if (*AI.flagIsDead == false && *Human.flagIsDead == false)
     {
         int hitModifier;
@@ -55,6 +53,16 @@ void MainWindow::on_attackButton_clicked()
                     {
                         *AI.flagIsDead = true;
                         Scrap += 30 + sectorNumber * 5 + rand() %10;
+                        if (*AI.enemyClass == 1)
+                            ui->label_pic_enemy->setPixmap(enemyFighterDead);
+                        else if (*AI.enemyClass == 2)
+                            ui->label_pic_enemy->setPixmap(enemyDestroyerDead);
+                        else if  (*AI.enemyClass == 3)
+                            ui->label_pic_enemy->setPixmap(enemyBomberDead);
+                        else if (*AI.enemyClass == 4)
+                            ui->label_pic_enemy->setPixmap(enemyCruiserDead);
+                        else if (*AI.enemyClass == 5)
+                            ui->label_pic_enemy->setPixmap(enemyBossDead);
                     }
                 }
             }
@@ -65,6 +73,16 @@ void MainWindow::on_attackButton_clicked()
                 {
                     *AI.flagIsDead = true;
                     Scrap += 30 + sectorNumber * 5 + rand() %10;
+                    if (*AI.enemyClass == 1)
+                        ui->label_pic_enemy->setPixmap(enemyFighterDead);
+                    else if (*AI.enemyClass == 2)
+                        ui->label_pic_enemy->setPixmap(enemyDestroyerDead);
+                    else if  (*AI.enemyClass == 3)
+                        ui->label_pic_enemy->setPixmap(enemyBomberDead);
+                    else if (*AI.enemyClass == 4)
+                        ui->label_pic_enemy->setPixmap(enemyCruiserDead);
+                    else if (*AI.enemyClass == 5)
+                        ui->label_pic_enemy->setPixmap(enemyBossDead);
                 }
             }
         }
@@ -89,6 +107,12 @@ void MainWindow::on_attackButton_clicked()
                     if (Human.getHealth() <= 0)
                     {
                         *Human.flagIsDead = true;
+                        if (*Human.shipClass == 1)
+                            ui->label_pic_player->setPixmap(playerBattleshipDead);
+                        else if (*Human.shipClass == 2)
+                            ui->label_pic_player->setPixmap(playerCruiserDead);
+                        else
+                            ui->label_pic_player->setPixmap(playerDestroyerDead);
                     }
                 }
             }
@@ -98,6 +122,12 @@ void MainWindow::on_attackButton_clicked()
                 if (Human.getHealth() <= 0)
                 {
                     *Human.flagIsDead = true;
+                    if (*Human.shipClass == 1)
+                        ui->label_pic_player->setPixmap(playerBattleshipDead);
+                    else if (*Human.shipClass == 2)
+                        ui->label_pic_player->setPixmap(playerCruiserDead);
+                    else
+                        ui->label_pic_player->setPixmap(playerDestroyerDead);
                 }
             }
         }
@@ -122,6 +152,11 @@ void MainWindow::on_upgradeButton_clicked()
 
 void MainWindow::on_jumpButton_clicked()
 {
+    QPixmap enemyFighter("D:/Kody/QT/Projekt/Images/EFt.png");
+    QPixmap enemyDestroyer ("D:/Kody/QT/Projekt/Images/EDr.png");
+    QPixmap enemyCruiser ("D:/Kody/QT/Projekt/Images/ECr.png");
+    QPixmap enemyBomber ("D:/Kody/QT/Projekt/Images/EBm.png");
+    QPixmap enemyBoss ("D:/Kody/QT/Projekt/Images/EBs.png");
     if (zoneNumber < 9)
     {
         zoneNumber++;
@@ -140,6 +175,16 @@ void MainWindow::on_jumpButton_clicked()
     }
     turnNumber = 1;
     Human.setShields(Human.getMaxShields());
+    if (*AI.enemyClass == 1)
+        ui->label_pic_enemy->setPixmap(enemyFighter);
+    else if (*AI.enemyClass == 2)
+        ui->label_pic_enemy->setPixmap(enemyDestroyer);
+    else if  (*AI.enemyClass == 3)
+        ui->label_pic_enemy->setPixmap(enemyBomber);
+    else if (*AI.enemyClass == 4)
+        ui->label_pic_enemy->setPixmap(enemyCruiser);
+    else if (*AI.enemyClass == 5)
+        ui->label_pic_enemy->setPixmap(enemyBoss);
     this->forceUpdateSector();
     this->forceUpdateEnemy();
     this->forceUpdatePlayer();
@@ -191,6 +236,9 @@ void MainWindow::on_specPowerButton_clicked()
 
 void MainWindow::on_actionNew_Game_triggered()
 {
+    QPixmap playerBattleship ("D:/Kody/QT/Projekt/Images/PBs.png");
+    QPixmap playerCruiser("D:/Kody/QT/Projekt/Images/PCr.png");
+    QPixmap playerDestroyer("D:/Kody/QT/Projekt/Images/PDr.png");
        if (*Human.battleship::flagSpecialPowerOn)
        {
            Human.battleship::specialPowerOff();
@@ -211,6 +259,12 @@ void MainWindow::on_actionNew_Game_triggered()
        zoneNumber = 0;
        sectorNumber = 1;
        Scrap = 0;
+       if (*Human.shipClass == 1)
+           ui->label_pic_player->setPixmap(playerBattleship);
+       else if (*Human.shipClass == 2)
+           ui->label_pic_player->setPixmap(playerCruiser);
+       else
+           ui->label_pic_player->setPixmap(playerDestroyer);
        this->forceUpdateSector();
        this->forceUpdatePlayer();
 }

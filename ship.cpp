@@ -139,3 +139,64 @@ ship &ship::operator = (const ship& a)
     *flagIsDead = *a.flagIsDead;
     return *this;
 }
+ship &ship::operator + (const ship& a)const
+{
+    ship* result;
+    result = new ship;
+    *result->health = *this->health + *a.health;
+    *result->maxHealth = *this->maxHealth + *a.maxHealth;
+    *result->shields = *this->shields + *a.shields;
+    *result->maxShields = *this->maxShields + *a.maxShields;
+    *result->weaponPower = *this->weaponPower + *a.weaponPower;
+    *result->accuracy = *this->accuracy + *a.accuracy;
+    *result->pierce = *this->pierce + *a.pierce;
+    *result->armorLevel = *this->armorLevel + *a.armorLevel;
+    *result->enginesLevel = *this->enginesLevel + *a.enginesLevel;
+    return *result;
+}
+
+ship &ship::operator - (const ship& a)const
+{
+    ship* result;
+    result = new ship;
+    *result->health = *this->health - *a.health;
+    *result->maxHealth = *this->maxHealth - *a.maxHealth;
+    *result->shields = *this->shields - *a.shields;
+    *result->maxShields = *this->maxShields - *a.maxShields;
+    *result->weaponPower = *this->weaponPower - *a.weaponPower;
+    *result->accuracy = *this->accuracy - *a.accuracy;
+    *result->pierce = *this->pierce - *a.pierce;
+    *result->armorLevel = *this->armorLevel - *a.armorLevel;
+    *result->enginesLevel = *this->enginesLevel - *a.enginesLevel;
+    return *result;
+}
+ship &ship::operator * (const ship& a)const
+{
+    ship* result;
+    result = new ship;
+    *result->health = *this->health * *a.health;
+    *result->maxHealth = *this->maxHealth * *a.maxHealth;
+    *result->shields = *this->shields * *a.shields;
+    *result->maxShields = *this->maxShields * *a.maxShields;
+    *result->weaponPower = *this->weaponPower * *a.weaponPower;
+    *result->accuracy = *this->accuracy * *a.accuracy;
+    *result->pierce = *this->pierce * *a.pierce;
+    *result->armorLevel = *this->armorLevel * *a.armorLevel;
+    *result->enginesLevel = *this->enginesLevel * *a.enginesLevel;
+    return *result;
+}
+ship &ship::operator / (const ship& a)const
+{
+    ship* result;
+    result = new ship;
+    *result->health = *this->health / *a.health;
+    *result->maxHealth = *this->maxHealth / *a.maxHealth;
+    *result->shields = *this->shields / *a.shields;
+    *result->maxShields = *this->maxShields / *a.maxShields;
+    *result->weaponPower = *this->weaponPower / *a.weaponPower;
+    *result->accuracy = *this->accuracy / *a.accuracy;
+    *result->pierce = *this->pierce / *a.pierce;
+    *result->armorLevel = *this->armorLevel / *a.armorLevel;
+    *result->enginesLevel = *this->enginesLevel / *a.enginesLevel;
+    return *result;
+}
