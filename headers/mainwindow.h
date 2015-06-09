@@ -2,7 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
+#include "player.h"
+#include "summit.h"
 namespace Ui {
 class MainWindow;
 }
@@ -14,6 +15,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    void forceUpdatePlayer ();
 
 private slots:
 
@@ -29,8 +31,17 @@ private slots:
 
     void on_specPowerButton_clicked();
 
+    void on_actionNew_Game_triggered();
+
+    void on_actionChoose_Class_triggered();
+
+    void forceUpdateEnemy ();
+
+    void forceUpdateSector ();
+
 private:
     Ui::MainWindow *ui;
 };
-
+extern summit Human;
+extern int Scrap;
 #endif // MAINWINDOW_H

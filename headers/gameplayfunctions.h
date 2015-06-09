@@ -4,3 +4,4 @@
 static int turnNumber, zoneNumber, sectorNumber;
 
 #endif // GAMEPLAYFUNCTIONS
+

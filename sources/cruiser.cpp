@@ -11,12 +11,8 @@ cruiser::cruiser()
     *this->pierce = 1;
     *this->enginesLevel = 4;
     *this->armorLevel = 0;
-    *this->damagedEngines = false;
-    *this->damagedWeapons = false;
-    *this->damagedOptics = false;
-    *this->breachedHull = false;
-    *this->damagedShields = false;
     flagSpecialPowerOn = new bool;
+    *flagSpecialPowerOn = false;
     originalShields = new int;
     originalMaxShields = new int;
     originalPierce = new int;
@@ -28,6 +24,7 @@ cruiser::~cruiser()
     delete originalMaxShields;
     delete originalPierce;
     delete originalAccuracy;
+    delete flagSpecialPowerOn;
 }
 
 void cruiser::specialPowerOn()
@@ -38,7 +35,7 @@ void cruiser::specialPowerOn()
     *this->originalAccuracy = *this->accuracy;
     *this->shields = *this->shields / 2;
     *this->maxShields = *this->maxShields / 2;
-    *this->pierce = (int)(*this->pierce * 0.5);
+    *this->pierce = (int)(*this->pierce * 2);
     *this->accuracy = *this->accuracy * 2;
     *flagSpecialPowerOn = true;
 }

@@ -11,11 +11,8 @@ battleship::battleship()
     *this->pierce = 0;
     *this->enginesLevel = 2;
     *this->armorLevel = 3;
-    *this->damagedEngines = false;
-    *this->damagedWeapons = false;
-    *this->damagedOptics = false;
-    *this->breachedHull = false;
-    *this->damagedShields = false;
+    flagSpecialPowerOn = new bool;
+    *flagSpecialPowerOn = false;
     originalShields = new int;
     originalMaxShields = new int;
     originalWeaponPower = new int;
@@ -25,6 +22,7 @@ battleship::~battleship()
     delete originalShields;
     delete originalMaxShields;
     delete originalWeaponPower;
+    delete flagSpecialPowerOn;
 }
 
 void battleship::specialPowerOn()

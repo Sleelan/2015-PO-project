@@ -12,13 +12,17 @@ TARGET = Projekt
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
+SOURCES += main.cpp \
         mainwindow.cpp \
     ship.cpp \
     player.cpp \
     battleship.cpp \
     cruiser.cpp \
-    destroyer.cpp
+    destroyer.cpp \
+    classwindow.cpp \
+    summit.cpp \
+    enemy.cpp \
+    upgradewindow.cpp
 
 HEADERS  += mainwindow.h \
     ship.h \
@@ -26,6 +30,12 @@ HEADERS  += mainwindow.h \
     player.h \
     battleship.h \
     cruiser.h \
-    destroyer.h
+    destroyer.h \
+    classwindow.h \
+    summit.h \
+    enemy.h \
+    upgradewindow.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    classwindow.ui \
+    upgradewindow.ui

@@ -11,11 +11,8 @@ destroyer::destroyer()
     *this->pierce = 0;
     *this->enginesLevel = 6;
     *this->armorLevel = 0;
-    *this->damagedEngines = false;
-    *this->damagedWeapons = false;
-    *this->damagedOptics = false;
-    *this->breachedHull = false;
-    *this->damagedShields = false;
+    flagSpecialPowerOn = new bool;
+    *flagSpecialPowerOn = false;
     originalEnginesLevel = new int;
     originalAccuracy = new int;
 }
@@ -23,11 +20,12 @@ destroyer::~destroyer()
 {
     delete originalEnginesLevel;
     delete originalAccuracy;
+    delete flagSpecialPowerOn;
 }
 
 void destroyer::specialPowerOn()
 {
-    *this->originalEnginesLevel = *this->shields;
+    *this->originalEnginesLevel = *this->enginesLevel;
     *this->originalAccuracy = *this->accuracy;
     *this->enginesLevel = *this->enginesLevel * 2;
     *this->accuracy = *this->accuracy / 2;

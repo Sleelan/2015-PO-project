@@ -2,12 +2,13 @@
 #define PLAYER_H
 #include "ship.h"
 
+extern int playerClass;
 class player : public ship
 {
 protected:
     bool* isPlayer;
-    int* shipClass;
 public:
+    int* shipClass;
     void setClass(int);
     player();
     virtual ~player();

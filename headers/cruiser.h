@@ -2,16 +2,16 @@
 #define CRUISER_H
 #include "player.h"
 
-class cruiser : public player {
+class cruiser : virtual public player {
 private:
-    bool* flagSpecialPowerOn;
     int* originalShields;
     int* originalMaxShields;
     int* originalPierce;
     int* originalAccuracy;
 public:
+    bool* flagSpecialPowerOn;
     cruiser();
-    ~cruiser();
+    virtual ~cruiser();
     void specialPowerOn();
     void specialPowerOff();
 };

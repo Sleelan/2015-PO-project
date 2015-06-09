@@ -2,14 +2,14 @@
 #define DESTROYER_H
 #include "player.h"
 
-class destroyer : public player {
+class destroyer : virtual public player {
 private:
-    bool* flagSpecialPowerOn;
     int* originalEnginesLevel;
     int* originalAccuracy;
 public:
+    bool* flagSpecialPowerOn;
     destroyer();
-    ~destroyer();
+    virtual ~destroyer();
     void specialPowerOn();
     void specialPowerOff();
 };
